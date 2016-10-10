@@ -1,0 +1,6 @@
+-dontwarn
+
+-dontobfuscate
+-dontshrink
+-dontoptimize
+-dontpreverify
