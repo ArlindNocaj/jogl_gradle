@@ -1,3 +1,22 @@
+# Proguard Problems with JOGL
+It seems that proguard breaks the fat jar, even if all the obfuscation/shrinking/optimization is deactivated.
+This is a small example showing this problem.
+
+Use gradle to generate the examles:
+
+``` 
+gradle proguard
+```
+ 
+The generated fat jar is ```build/libs/jogl_gradle-all.jar```. 
+This jar is then processed by Proguard leading to ``` build/libs/proguard-jogl_gradle.jar```.
+
+Although the content of the jar files are exactly the same the second one does not work when using:
+```
+java -jar build/libs/proguard-jogl_gradle.jar
+```
+
+
 # JOGL with Gradle
 Sample Gradle project with JOGL.
 
@@ -39,22 +58,3 @@ runtime "org.jogamp.jogl:jogl-all:2.3.1:natives-windows-i586"
 ```
 
 With this setup you should be able to execute `gradle run` and get a nice window.
-
-
-# JOGL with ProGuard
-It seems that proguard breaks the fat jar, even if all the obfuscation/shrinking/optimization is deactivated.
-This is a small example showing this problem.
-
-Use gradle to generate the examles:
-
-``` 
-gradle proguard
-```
- 
-The generated fat jar is ```build/libs/jogl_gradle-all.jar```. 
-This jar is then processed by Proguard leading to ``` build/libs/proguard-jogl_gradle.jar```.
-
-Although the content of the jar files are exactly the same the second one does not work when using:
-```
-java -jar build/libs/proguard-jogl_gradle.jar
-```
