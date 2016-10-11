@@ -1,8 +1,8 @@
 # JOGL with Gradle and Proguard
 This is a simple example which includes Proguard in the build process.
 
-Note that the ```-keepdirectories``` option is very important for JOGL, otherwise the files cannot be loaded correctly from the output jar.
-Otherwise the following error occurs:
+Note that the ```-keepdirectories``` option is very important for JOGL, otherwise the files cannot be loaded correctly from the output jar and you get the following error:
+
 ```
         # A fatal error has been detected by the Java Runtime Environment:
         #
