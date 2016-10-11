@@ -65,8 +65,10 @@ task proguard(type: proguard.gradle.ProGuardTask) {
 
 shadowJar {
     baseName = jar.baseName
-    manifest.attributes 'Application-Name': 'visone',
+    manifest.attributes 'Application-Name': 'Sample App',
             'Main-Class': 'ben.Main'
 }
 
 proguard.dependsOn shadowJar
+
+build.dependsOn proguard

@@ -1,5 +1,8 @@
 -dontwarn
 
+#adds directory entries to the proguard output jar. This is necessary for getResource calls.
+-keepdirectories
+
 -dontobfuscate
 -dontshrink
 -dontoptimize
